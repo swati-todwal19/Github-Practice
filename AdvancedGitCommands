@@ -1,0 +1,119 @@
+1. Git Stash - You are working on a feature, but suddenly need to switch branches.
+Your work is unfinished and you don’t want to commit it yet.
+
+Solution: git stash
+
+Command:
+git stash
+
+
+What it does:
+
+Temporarily saves all uncommitted changes (staged and unstaged)
+
+Restores your working directory to the last commit state
+
+Example:
+git add index.html
+git stash
+
+
+Your index.html changes are saved in stash
+
+Working directory is now clean
+
+You can safely switch branches
+
+Apply Stash Back:
+
+Pop – Restore and remove from stash
+
+git stash pop
+
+
+Restores changes and removes them from stash
+
+Apply – Restore but keep in stash
+
+git stash apply
+
+
+Restores changes but keeps them in stash
+
+2. Git Reset - 
+git reset lets you undo commits, unstage changes, or even discard changes completely.
+
+Unstage a file
+
+Command:
+
+git reset HEAD index.html
+
+
+What it does:
+
+Removes index.html from the staging area
+
+Keeps your changes in the working directory (nothing is lost)
+
+Undo last commit but keep changes (Soft reset)
+
+Undo last commit but keep changes (Soft reset) -
+
+Command:
+
+git reset --soft HEAD~1
+
+
+What it does:
+
+Moves HEAD one commit back
+
+Removes the last commit from history
+
+Keeps all changes staged so you can commit again
+
+Undo last commit and unstage changes (Mixed reset)
+
+Command:
+
+git reset --mixed HEAD~1
+
+
+What it does:
+
+Moves HEAD one commit back
+
+Removes last commit from history
+
+Keeps changes in working directory, but unstaged
+
+Undo last commit and discard changes (Hard reset)
+
+Command:
+
+git reset --hard HEAD~1
+
+
+What it does:
+
+Moves HEAD one commit back
+
+Removes the last commit from history
+
+Deletes all changes in working directory
+
+Resets your project to previous commit state
+
+Git Cherry-Pick – Pick a specific commit
+
+What it is:
+
+cherry-pick takes a specific commit from one branch and applies it to another branch
+
+Useful when you only need one fix or feature, not the whole branch
+
+Command:
+
+git cherry-pick <commit-hash>
+
